@@ -5,11 +5,13 @@ Change Log
 **********
 
 .. list-table::
-   :widths: 10 80
+   :widths: 10 75
    :header-rows: 1
 
    * - Date
      - Change  
+   * - 4/10/14
+     - Expanded the :ref:`Grades` chapter to include topics on data interpretation.
    * - 04/03/14
      - Updated the :ref:`Adding Pages to a Course` chapter to reflect ability to
        :ref:`Show or Hide the Course Wiki Page`.
