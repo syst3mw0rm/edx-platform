@@ -1,0 +1,100 @@
+<%inherit file="base.html" />
+<%!
+  import logging
+  from xmodule.util.date_utils import get_default_time_display, almost_same_datetime
+  from django.utils.translation import ugettext as _
+  from django.core.urlresolvers import reverse
+%>
+<%block name="title">${_("CMS Subsection")}</%block>
+<%block name="bodyclass">is-signedin course view-subsection</%block>
+
+
+<%namespace name="components" file="widgets/components.html" />
+<%namespace name='static' file='static_content.html'/>
+
+<%block name="content">
+<div class="main-wrapper">
+  <div class="inner-wrapper">
+    <div class="main-column">
+      <form id="update-components" action="#" method="post">
+      <input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}"/>
+      <a href="#" class="update-button action-primary action">Update</a>
+      <article class="subsection-body window" data-locator="${locator}">
+        <div class="wrapper-dnd">
+          <input type="checkbox" id="selectall">Select all</input>
+          % for section in sections:
+            % for subsection in sections[section]:
+              % for unit in sections[section][subsection]:
+                <div class="sortable-unit-list">
+                    ${components.enum_components(unit_components=sections[section][subsection][unit])}
+                </div>
+              % endfor
+            % endfor
+          % endfor
+        </div>
+      </article>
+      </form>
+    </div>
+  </div>
+</div>
+</%block>
+
+<%block name="jsextra">
+<link rel="stylesheet" type="text/css" href="${static.url('js/vendor/timepicker/jquery.timepicker.css')}" />
+
+<script type="text/javascript">
+require(["domReady!", "jquery", "js/models/location", "js/views/overview_assignment_grader",
+  "js/collections/course_grader", "js/views/overview"],
+  function(doc, $, Location, OverviewAssignmentGrader, CourseGraderCollection) {
+    // expand the due-date area if the values are set
+    if ($('#due_date').val() != '') {
+      var $block = $('.set-date').closest('.due-date-input');
+      $('.set-date').hide();
+      $block.find('.date-setter').show();
+    }
+    // TODO figure out whether these should be in window or someplace else or whether they're only needed as local vars
+    // I believe that current (New Section/New Subsection) cause full page reloads which means these aren't needed globally
+    // but we really should change that behavior.
+    if (!window.graderTypes) {
+        window.graderTypes = new CourseGraderCollection(${course_graders|n}, {parse:true});
+    }
+
+    $(".gradable-status").each(function(index, ele) {
+      var gradeView = new OverviewAssignmentGrader({
+        el : ele,
+        graders : window.graderTypes,
+        hideSymbol : true
+      });
+    });
+
+    $('#selectall').click(function () {
+      $('.selectedId').prop('checked', isChecked('selectall'));
+    });
+
+    $('.update-button').on('click',function() {
+        $('form#update-components').submit();
+    });
+});
+
+function isChecked(checkboxId) {
+  var id = '#' + checkboxId;
+  return $(id).is(':checked');
+}
+
+function resetSelectAll() {
+  // if all checkbox are selected, check the selectall checkbox
+  // and viceversa
+  if ($('.selectedId').length == $('.selectedId:checked').length) {
+    $('#selectall').attr('checked', 'checked');
+  } else {
+    $('#selectall').removeAttr('checked');
+  }
+
+  if ($('.selectedId:checked').length > 0) {
+    $('#edit').attr('disabled', false);
+  } else {
+    $('#edit').attr('disabled', true);
+  }
+}
+</script>
+</%block>

@@ -1,0 +1,37 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from django.core.urlresolvers import reverse %>
+<%! from contentstore.utils import compute_unit_state %>
+<%! from xmodule.modulestore.django import loc_mapper %>
+
+<!--
+This def will enumerate through a passed in subsection and list all of the units
+-->
+<%def name="enum_components(unit_components, actions=True, selected=None, sortable=True)">
+<ol ${'class="sortable-unit-list"' if sortable else ''}>
+  % for component, value in unit_components.items():
+
+  <li class="courseware-unit unit is-draggable">
+
+    <%include file="_ui-dnd-indicator-before.html" />
+
+    <div class="section-item">
+
+      <input type="checkbox" class="selectedId" name=${component.location} value="" onclick="resetSelectAll();" />
+      <span class="component-name">${component.display_name_with_default}</span>
+
+      <div class="item-actions">
+      % if value:
+        <i class="icon-ok"></i>
+      % else:
+        <i class="icon-remove"></i>
+      % endif
+      </div>
+
+    </div>
+
+    <%include file="_ui-dnd-indicator-after.html" />
+  </li>
+  % endfor
+</ol>
+</%def>
+
