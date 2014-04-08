@@ -338,6 +338,15 @@ class LocMapperStore(object):
         self.location_map.update(location_id, {'$set': {'block_map': block_map}})
         return block_id
 
+    def _remove_block_map(self, location, location_id, block_map):
+        """
+        Remove the given location from the block_map and persist it
+        """
+        encoded_location_name = self.encode_key_for_mongo(location.name)
+        if encoded_location_name in block_map.keys():
+            del block_map[encoded_location_name]
+            self.location_map.update(location_id, {'$set': {'block_map': block_map}})
+
     def _interpret_location_course_id(self, course_id, location, lower_only=False):
         """
         Take the old style course id (org/course/run) and return a dict w/ a SON for querying the mapping table.
@@ -446,6 +455,12 @@ class LocMapperStore(object):
                 return entry[1]
         return None
 
+    def _remove_location_from_cache(self, old_course_id, location):
+        """
+        Remove location from cache.
+        """
+        self.cache.delete(u'{}+{}'.format(old_course_id, location.url()))
+
     def _get_course_locator_from_cache(self, old_course_id, published):
         """
         Get the course Locator for this old course id
@@ -464,6 +479,12 @@ class LocMapperStore(object):
         See if the locator is in the cache. If so, return the mapped location.
         """
         return self.cache.get(unicode(locator))
+
+    def _remove_locator_from_cache(self, locator):
+        """
+        Delete locator from cache.
+        """
+        self.cache.delete(unicode(locator))
 
     def _get_course_location_from_cache(self, locator_package_id, lower_only=False):
         """
@@ -531,3 +552,20 @@ class LocMapperStore(object):
         delete_keys.append(u'{}+{}'.format(old_course_id, location.url()))
         delete_keys.append(old_course_id)
         self.cache.delete_many(delete_keys)
+
+    def delete_item_mapping(self, locator, location):
+        """
+        Delete item from loc_mapper and cache
+
+        :param locator: a BlockUsageLocator
+        :param location: a Location pointing to a module
+        """
+        course_location = self.translate_locator_to_location(locator, get_course=True)
+        location_id = self._interpret_location_course_id(course_location.course_id, location)
+        maps = self.location_map.find(location_id)
+        maps = list(maps)
+        if len(maps) == 1:
+            self._remove_block_map(location, location_id, maps[0]['block_map'])
+
+        self._remove_locator_from_cache(locator)
+        self._remove_location_from_cache(course_location.course_id, location)
