@@ -372,12 +372,105 @@ student to “build” a virtual circuit. Details about each problem type,
 including information about how to create the problem, appears in the
 page for the problem type.
 
--  :ref:`Common Problems` appear on the **Common Problem Types** tab when you
+-  **Common Problems** appear on the **Common Problem Types** tab when you
    create a new Problem component in Studio. You create these problems
-   using the Simple Editor.
+   using the Simple Editor. Common problem types include the following:
+   - :ref:`Checkbox`
+
+
+
+
+
+
+
+
+
+
+*Common problems* are typical problems such as multiple choice problems and other problems whose answers are simple for students to select or enter. You can create all of these problems using the Simple Editor in Studio. You don't have to use XML or switch to the Advanced Editor. (However, the information for each problem also provides sample XML code for these problems in the Advanced Editor.)
+
+The following are the common problem types in Studio:
+
+-  :ref:`Checkbox` In checkbox problems, students select one or more options
+   from a list of possible answers.
+-  :ref:`Dropdown` In dropdown problems, students select one answer from a
+   dropdown list.
+-  :ref:`Multiple Choice` Multiple choice problems require students to
+   select one answer from a list of choices that appear directly below
+   the question.
+-  :ref:`Numerical Input` Numerical input problems require answers that
+   include only integers, fractions, and a few common constants and
+   operators.
+-  :ref:`Text Input` In text input problems, students enter a short text
+   answer to a question.
+
+These problems are easy to access in Studio. To create them, click
+**Problem** under **Add New Component**, click the **Common Problem
+Types** tab, and then click the name of the problem. 
+
+.. note:: All problems must include labels for accessibility. The label generally includes the text of the main question in your problem. To add a label for a common problem, surround the text of the label with angle brackets pointed toward the text (>>*label text*<<).
+
+
+
+
+
+
+
+
+
+
+
+
 -  :ref:`Advanced Problems` appear on the **Advanced** tab when you create a
    new Problem component. You create these problems using the Advanced
    Editor.
+
+
+.. _Advanced Problems:
+
+Advanced Problems
+=================
+
+Advanced problems are problems such as drag and drop, circuit schematic
+builder, and math expression problems. Many of these problems appear on the
+Advanced tab when you create a new Problem component. Studio provides
+templates for these problems, but the problems open directly in the
+**Advanced Editor** and have to be created in XML.
+
+-  :ref:`Circuit Schematic Builder` In circuit schematic problems, students
+   create and modify circuits on an interactive grid and submit
+   computer-generated analyses of the circuits for grading.
+-  :ref:`Custom JavaScript Display and Grading` With custom JavaScript display
+   and grading problems, you can incorporate problem types that you've created
+   in HTML into Studio via an IFrame.
+-  :ref:`Custom Python Evaluated Input` Custom Python-evaluated input (also called "write-your-own-grader" problems evaluate students' responses using an embedded Python script that you create. These problems can be any type.
+-  :ref:`Drag and Drop` Drag and drop problems require students to drag text
+   or objects to a specific location on an image.
+-  :ref:`Image Mapped Input` Image mapped input problems require students to
+   click a specific location on an image.
+-  :ref:`Math Expression Input` Math expression input problems require
+   students to enter a mathematical expression as text, such as
+   e=m\*c^2.
+-  :ref:`Problem with Adaptive Hint` These problems can give students
+   feedback or hints based on their responses. Problems with adaptive
+   hints can be text input or multiple choice problems.
+- :ref:`Problem Written in LaTeX` This problem type allows you to convert problems that you’ve already written in LaTeX into the edX format. Note that this problem type is still a prototype, however, and may not be supported in the future.
+
+These problems are easy to access in Studio. To create them, click
+**Problem** under **Add New Component**, click the **Advanced** tab, and
+then click the name of the problem that you want to create.
+
+
+
+
+
+
+
+
+
+
+
+
+
 -  :ref:`Specialized Problems` are advanced problems that aren’t available by
    default. To add these problems, you first have to modify the advanced
    settings in your course. The Advanced component then appears under
