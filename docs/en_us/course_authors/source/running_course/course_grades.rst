@@ -106,12 +106,12 @@ Grade reports provide a snapshot of cumulative course scores, by assignment, of 
 
 * An ``{assignment type} Avg`` with each student's current average score for that assignment type: for example, HW Avg.
 
-.. note:: The grade reports do not include information about individual questions within the assignments, or include student answer distributions.
-
 You can open ``{course_id}_grade_report_{date}.csv`` files in a spreadsheet application to sort, graph, and compare data.
 
 .. image:: ../Images/Grade_Report.png
   :alt: A course grade report, opened in Excel, showing the grades acheived by students on several homework assignments and the midterm
+
+.. note:: The grade reports do not include information about individual questions within the assignments, or include student answer distributions.
 
 =========================================================
 Check the Progress of a Single Student
@@ -156,9 +156,15 @@ To view the Progress page for a student:
 Interpret the Student Progress Page
 =============================================
 
-The chart of a student's scores on the Progress page and the rows of data on the grade report present assignment scores in a similar order. However, the total, cumulative score earned for the course is placed in a different position on the Progress page.
+The chart of a student's scores on the **Progress** page and the rows of data on the grade report present assignment scores in a similar order. However, the total, cumulative score earned for the course is placed in a different position on the Progress page.
 
-In this example grade report, the indicated student has a current grade of 0.43 (43%). On each of the first four homework assignments the student scored 1 (100%), but currently has a 0 (0%) on each of the remaining three assignments. The student's current average score for homework assignments is listed as 0.666666667 (67%): in this course, the homework assignment with the lowest score is dropped, so this average is for six assignments rather than all seven. The student has a score of 0.75 (75%) on the midterm, and a score of 0 (0%) on the final. 
+In this example grade report, the indicated student has a current grade of 0.43 (43%). 
+
+* On each of the first four homework assignments the student scored 1 (100%), but currently has a 0 (0%) on each of the remaining three assignments. 
+
+  Notice, however, that the student's current average score for homework assignments is listed as 0.666666667 (67%): in this course, the homework assignment with the lowest score is dropped, so this average is over six assignments rather than all seven. 
+
+* The student has a score of 0.75 (75%) on the midterm, and a score of 0 (0%) on the final. 
 
 .. image:: ../Images/Grade_Report_example.png
   :alt: A course grade report with a single student's information indicated by a rectangle
@@ -168,7 +174,7 @@ On the student’s progress page, you see the same information graphically repre
 .. image:: ../Images/Student_Progress.png
    :alt: Progress page for a student also included on the grade report: includes a column graph with the grade acheived for each assignment 
 
-The chart on the Progress page includes y-axis labels for the grade ranges defined for the course. In this example, Pass is set to 60%, so at the end of the course students with a grade of 0.60 or higher can receive certificates.
+The chart on the **Progress** page includes y-axis labels for the grade ranges defined for the course. In this example, Pass is set to 60%, so at the end of the course students with a grade of 0.60 or higher can receive certificates.
 
 ===========================================================
 Check a Student's Answer Submission and Submission History
@@ -243,7 +249,7 @@ Each problem that you define for your course includes a correct answer, and may 
 
 **Note**: You can only rescore problems that have a correct answer entered in edX Studio. Problems that are scored by an external grader cannot be rescored with this procedure.
 
-To rescore a problem, you need its unique identifier. See :ref:`find_URL`.
+To specify the problem you want to rescore, you need its unique identifier. See :ref:`find_URL`.
 
 To rescore a problem:
 
@@ -303,7 +309,7 @@ To reset student attempts for a problem:
 Student Answer Distribution
 ****************************************
 
-For certain problems in your course, you can download a CSV file with data about the distribution of student answers. Student answer distribution data is included in the file for problems of these types: 
+For certain types of problems in your course, you can download a CSV file with data about the distribution of student answers. Student answer distribution data is included in the file for problems of these types: 
 
 * Checkboxes (``<choiceresponse>``)
 * Dropdown (``<optionresponse>``)
@@ -359,30 +365,39 @@ To download the most recent file of student answer data:
 
 #. Click **Data Download**.
 
-#. At the bottom of the page, click the ``{course_id}_answer_distribution.csv`` file name.
+#. At the bottom of the page, click the ``{course_id}_answer_distribution.csv`` file name. You may have to scroll down to find this file.
 
 ==========================================================================
-Interpret the Student Answer Distribution Report%%%
-==========================================================================
-
-
-
-
-==========================================================================
-Frequently Asked Questions about the Student Answer Distribution Report%%%
+Frequently Asked Questions about the Student Answer Distribution Report
 ==========================================================================
 
 Answers to questions about the student answer distribution report follow.   
 
-**Why are some problems missing from this report? They have the problem types listed under :ref:`Review_Answers`.**
+**My course doesn't have a student answer distribution report. How can I generate it?**
+
+Student answer distribution reports are generated automatically, and refreshed several times each day. The ``{course_id}_answer_distribution.csv`` file displays after all of the ``{course_id}_grade_report_{date}.csv`` files. Be sure to scroll to the end of the list of available reports. 
+
+**Why are some problems missing from this report? The ones that are missing do have the problem types listed under :ref:`Review_Answers`.**
 
 This report includes only problems that at least one student has answered since early March 2014. For those problems, this report only includes activity that occurred after October 2013. 
 
-* For checkboxes and multiple choice problems, the answer choices actually selected by a student after early March 2014 display as described above. Answer choices selected by at least one student after October 2013, but not selected since early March 2014, are included on the report but do not include an **AnswerValue**. The **ValueID** does display the internal identifiers, such as choice_1 and choice_2, for those answers. 
+**Why don't I see an AnswerValue for some of my problems?**
 
-* For problems that use the **Randomization** setting in Studio, if a particular answer has not been selected since early March 2014, the **Question** is blank for that answer.
+For checkboxes and multiple choice problems, the answer choices actually selected by a student after early March 2014 display as described in the previous answer. Answer choices selected by at least one student after October 2013, but not selected since early March 2014, are included on the report but do not include an **AnswerValue**. The **ValueID** does display the internal identifiers, such as choice_1 and choice_2, for those answers. 
 
-* Problem **Count** values reflect the entire problem history. If you change a problem after it is released, it may not be possible for you to determine which answers were given before and after you made the change.
+**Why don't I see a Question for some of my problems?**
+
+The value in the **Question** column is the accessibility label for the problem. To be included in the report, this label must have angle brackets around it (>>Question<<) in Studio's Simple Editor.
+
+Also, for problems that use the **Randomization** setting in Studio, if a particular answer has not been selected since early March 2014, the **Question** is blank for that answer.
+
+**My students are saying that they answered a question, but it isn't showing up in the report. How can that be?**
+
+Only questions that have a **Maximum Attempts** setting of 1 or higher are included on the report.
+
+**I made a correction to a problem after it was released. How can I tell which students tried to answer it before I made the change?**
+
+Problem **Count** values reflect the entire problem history. If you change a problem after it is released, it may not be possible for you to determine which answers were given before and after you made the change.
 
 **Why is the same answer showing up in two different rows when I view the report in a spreadsheet?**
 
