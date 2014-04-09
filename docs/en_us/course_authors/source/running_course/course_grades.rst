@@ -148,7 +148,7 @@ To view the Progress page for a student:
 
    Below the chart, subsections are listed on the left and the units that contain assignments are listed on the right. The student's individual problem scores display.
 
-   .. image:: ../Images/Student_Progress_list.png
+.. image:: ../Images/Student_Progress_list.png
      :alt: Bottom portion of a Progress page for the same student with the score acheived for each problem in the first course subsection 
      :width:
 
@@ -231,7 +231,7 @@ To find the unique identifier in the URL for a problem:
 
    Information about the problem displays, including its location or URL. This URL ends with the type of module, which is typically "problem", and the unique identifier. 
 
-   .. image:: ../Images/Problem_URL.png
+.. image:: ../Images/Problem_URL.png
     :alt: The Staff Debug view of a problem with the unique identifier indicated at the end of a URL address
 
 
@@ -387,7 +387,7 @@ For checkboxes and multiple choice problems, the answer choices actually selecte
 
 **Why don't I see a Question for some of my problems?**
 
-The value in the **Question** column is the accessibility label for the problem. To be included in the report, this label must have angle brackets around it (>>Question<<) in Studio's Simple Editor.
+The value in the **Question** column is the accessibility label for the problem. To be included in the report, this label must have angle brackets around it (>>Question<<) in the Studio Simple Editor.
 
 Also, for problems that use the **Randomization** setting in Studio, if a particular answer has not been selected since early March 2014, the **Question** is blank for that answer.
 
