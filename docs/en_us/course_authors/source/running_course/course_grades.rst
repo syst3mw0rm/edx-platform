@@ -16,7 +16,7 @@ To review student answers to the problems in your course, you can download data 
 
 For information about how you establish a grading policy and work with the Problem components in your course, see :ref:`Establish a Grading Policy` or :ref:`Working with Problem Components`.
 
-**Important**: If you make changes to your grading policy after a course starts, students can see the effect of your changes on their Progress pages. Be sure to announce any changes on your Course Info page.
+**Important**: If you make changes to your grading policy after a course starts, students can see the effect of your changes on their **Progress** pages. Be sure to announce any changes on your Course Info page.
 
 .. _Review_grades:
 
@@ -96,20 +96,22 @@ To download a file of student grades:
 Interpret the Grade Report
 =====================================
 
-Grade reports provide a snapshot of cumulative course scores, by assignment, of every currently enrolled student. The CSV file contains one row of data for each student, and columns that provide the following information.
-
-* Student identifiers, including an internal ``id``, ``email`` address, and ``username``.
-
-* ``grade``, with the total score a student has currently attained in the course. This value is expressed as a decimal: a student with a grade of 0.65 has earned 65% of the credit in the course, and a student with a grade of 1 has earned 100%. 
-
-* Each ``{assignment type} {number}`` defined in your grading configuration, with the score a student attained for that specific assignment. For example, column HW 03 shows the scores for the third hoework assignment.
-
-* An ``{assignment type} Avg`` with each student's current average score for that assignment type: for example, HW Avg.
+Grade reports provide a snapshot of cumulative course scores, by assignment, of every currently enrolled student. 
 
 You can open ``{course_id}_grade_report_{date}.csv`` files in a spreadsheet application to sort, graph, and compare data.
 
 .. image:: ../Images/Grade_Report.png
   :alt: A course grade report, opened in Excel, showing the grades acheived by students on several homework assignments and the midterm
+
+The CSV file contains one row of data for each student, and columns that provide the following information.
+
+* Student identifiers, including an internal ``id``, ``email`` address, and ``username``.
+
+* ``grade``, with the total score a student has currently attained in the course. This value is expressed as a decimal: a student with a grade of 0.65 has earned 65% of the credit in the course, and a student with a grade of 1 has earned 100%. 
+
+* Each ``{assignment type} {number}`` defined in your grading configuration, with the score a student attained for that specific assignment. For example, column HW 03 shows the scores for the third homework assignment.
+
+* An ``{assignment type} Avg`` with each student's current average score for that assignment type: for example, HW Avg.
 
 .. note:: The grade reports do not include information about individual questions within the assignments, or include student answer distributions.
 
@@ -117,13 +119,13 @@ You can open ``{course_id}_grade_report_{date}.csv`` files in a spreadsheet appl
 Check the Progress of a Single Student
 =========================================================
 
-To check a single student's progress you can locate the specific row on the grade report or review the student's Progress page. The Progress page includes a chart that plots the score the student has earned for every graded assignment and the total grade as of the current date. Below the chart, each assignment and the score attained are listed.
+To check a single student's progress, you can locate the specific row on the grade report or review the student's **Progress** page. The **Progress** page includes a chart that plots the score the student has earned for every graded assignment and the total grade as of the current date. Below the chart, each assignment and the score attained are listed.
 
-To review a student's Progress page, you supply an email address or username. You can check the progress for students who are either enrolled in, or who have unenrolled from, the course.
+To review a student's **Progress** page, you supply an email address or username. You can check the progress for students who are either enrolled in, or who have unenrolled from, the course.
 
 Students can view a similar chart and assignment list (of their own progress only) when they are logged in to the course.
 
-To view the Progress page for a student:
+To view the **Progress** page for a student:
 
 #. View the live version of your course.
 
@@ -139,26 +141,27 @@ To view the Progress page for a student:
 
    .. image:: ../Images/Student_Progress.png
      :alt: Progress page chart for a student: includes a column graph with the score acheived for each assignment 
-     :width:
 
    To learn more about a particular assignment, move the cursor onto the value in the chart. A brief description displays. 
 
    .. image:: ../Images/Student_Progress_mouseover.png
-     :alt: Progress page with a description of the graphed X for the last homework assignment which is "The lowest 1 Homework scores are dropped"
+     :alt: Progress page with a tooltip for the X that was graphed for the last homework assignment, which indicates that the lowest homework score is dropped
 
    Below the chart, subsections are listed on the left and the units that contain assignments are listed on the right. The student's individual problem scores display.
 
 .. image:: ../Images/Student_Progress_list.png
      :alt: Bottom portion of a Progress page for the same student with the score acheived for each problem in the first course subsection 
-     :width:
 
 =============================================
 Interpret the Student Progress Page
 =============================================
 
-The chart of a student's scores on the **Progress** page and the rows of data on the grade report present assignment scores in a similar order. However, the total, cumulative score earned for the course is placed in a different position on the Progress page.
+The chart of a student's scores on the **Progress** page and the rows of data on the grade report present assignment scores in a similar order. However, the total, cumulative score earned for the course is placed in a different position on the **Progress** page.
 
 In this example grade report, the indicated student has a current grade of 0.43 (43%). 
+
+.. image:: ../Images/Grade_Report_example.png
+  :alt: A course grade report with a single student's information indicated by a rectangle
 
 * On each of the first four homework assignments the student scored 1 (100%), but currently has a 0 (0%) on each of the remaining three assignments. 
 
@@ -166,10 +169,7 @@ In this example grade report, the indicated student has a current grade of 0.43 
 
 * The student has a score of 0.75 (75%) on the midterm, and a score of 0 (0%) on the final. 
 
-.. image:: ../Images/Grade_Report_example.png
-  :alt: A course grade report with a single student's information indicated by a rectangle
-
-On the student’s progress page, you see the same information graphically represented; however, the student's "total" of 43% is on the far right.
+On the student's **Progress** page, you see the same information graphically represented; however, the student's "total" of 43% is on the far right.
 
 .. image:: ../Images/Student_Progress.png
    :alt: Progress page for a student also included on the grade report: includes a column graph with the grade acheived for each assignment 
@@ -377,7 +377,7 @@ Answers to questions about the student answer distribution report follow.
 
 Student answer distribution reports are generated automatically, and refreshed several times each day. The ``{course_id}_answer_distribution.csv`` file displays after all of the ``{course_id}_grade_report_{date}.csv`` files. Be sure to scroll to the end of the list of available reports. 
 
-**Why are some problems missing from this report? The ones that are missing do have the problem types listed under :ref:`Review_Answers`.**
+**Why are some problems missing from this report? The ones that are missing do have the problem types listed under** :ref:`Review_Answers`.
 
 This report includes only problems that at least one student has answered since early March 2014. For those problems, this report only includes activity that occurred after October 2013. 
 
@@ -387,7 +387,7 @@ For checkboxes and multiple choice problems, the answer choices actually selecte
 
 **Why don't I see a Question for some of my problems?**
 
-The value in the **Question** column is the accessibility label for the problem. To be included in the report, this label must have angle brackets around it (>>Question<<) in the Studio Simple Editor.
+The value in the **Question** column is the accessibility label for the problem. For more information about how to set up labels for problems, see :ref:`Common Problems`.
 
 Also, for problems that use the **Randomization** setting in Studio, if a particular answer has not been selected since early March 2014, the **Question** is blank for that answer.
 
