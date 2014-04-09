@@ -34,7 +34,9 @@ You establish a grading policy for your course when you create it in Studio. Whi
 
 #. Click **Data Download** > **Grading Configuration**.
 
-   A list of the assignment types in your course displays. In this example, Homework is weighted as 0.3 (30%) of the grade. Below the list of graded assignment types and their weights, each *public* subsection and unit that contains an assignment is listed.
+   A list of the assignment types in your course displays. In this example, Homework is weighted as 0.3 (30%) of the grade. 
+
+..  DOC-290: research this statement before including anything like it: Below the list of graded assignment types and their weights, each *public* subsection and unit that contains an assignment is listed.
 
    .. image:: ../Images/Grading_Configuration.png
      :alt: XML of course assignment types and weights for grading
