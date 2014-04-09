@@ -10,27 +10,24 @@ Exercises and Tools
    change
 
    create_problem_component
-   checkbox_problems
+   annotation
+   checkbox
+   chemical_equation
    circuit_schematic_builder
-   custom_javascript_problems
-   custom_python_problems
-   drag_and_drop_problems
-   dropdown_problems
-   image_mapped_input_problems
-   multiple_choice_problems
-   math_problems
+   custom_javascript
+   custom_python
+   drag_and_drop
+   dropdown
+   external_graders
+   full_screen_image
+   google_hangouts
+   image_mapped_input
+   lti_component
+   multiple_choice
+   math
+   open_response_assessment
    problem_with_hint
    problem_in_latex
-   text_input_problems
-
-
-
-   advanced_problems
-   specialized_problems
-   external_graders
-   open_response_assessment
-   tools
-   additional_tools
-   google_hangouts
-   f
-   g
+   text_input
+   zooming_image
+   mathjax

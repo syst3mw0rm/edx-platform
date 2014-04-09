@@ -476,6 +476,91 @@ then click the name of the problem that you want to create.
    settings in your course. The Advanced component then appears under
    **Add New Component** in each unit, and these problems are available
    in the Advanced component.
+
+Specialized Problems
+====================
+
+Specialized problems are advanced problems such as annotations. These problems are available through the Advanced component in Studio. To add the Advanced component to your course, you'll modify your course's advanced settings. The Advanced component then appears under **Add New Component** in each unit.
+
+-  :ref:`Annotation` Annotation problems ask students to respond to
+   questions about a specific block of text. The question appears above
+   the text when the student hovers the mouse over the highlighted text
+   so that students can think about the question as they read.
+
+.. _ Add Advanced Component:
+
+**Add the Advanced Component to Your Course**
+
+By default, when you create a new component in Studio, you see the
+following options.
+
+.. image:: ../Images/AddNewComponent.png
+  :alt: Image of the Add a New Component panel
+
+To create a specialized problem, you must first add the Advanced
+component to your course. To do this, follow these steps.
+
+#. On the **Settings** menu, click **Advanced Settings**.
+
+#. On the **Advanced Settings** page, locate the **Manual Policy
+   Definition** section, and then locate the **advanced_modules**
+   policy key (this key is at the top of the list).
+
+.. image:: ../Images/AdvancedModulesEmpty.png
+     :alt: Image of the Manual Policy Definition section of the Advanced Settings page
+
+3. Under **Policy Value**, place your cursor between the brackets, and
+   then enter the value for the type of problem that you want to create.
+   Make sure to include the quotation marks, but not the period.
+
+   -  For annotations, enter **"annotatable"**.
+
+   -  For word clouds, enter **"word_cloud"**.
+
+   You can enter more than one problem type at a time. When you do,
+   make sure to surround each problem type with quotation marks and
+   separate each problem type with a comma, but do not include any
+   spaces.
+   
+   For example, if you wanted to add annotations and word cloud problems in your course, you would enter
+   the following between the brackets.
+
+   ::
+
+       "annotatable","word_cloud"
+
+   .. image:: ../Images/AdvSettings_Before.png
+     :alt: Image of the Manual Policy Definition section of the Advanced Settings page, with specialized problems added
+
+4. At the bottom of the page, click **Save Changes**.
+
+   The page refreshes automatically. At the top of the page, you see a
+   notification that your changes have been saved.
+
+   The text in the **Policy Value** field now appears as follows.
+
+.. image:: ../Images/AdvSettings_After.png
+     :alt: Image of the Manual Policy Definition section of the Advanced Settings page, with specialized problems added after saving
+
+5. Return to the unit where you want to add the specialized problem. The
+   list of possible components now contains an Advanced component.
+
+.. image:: ../Images/AdvancedComponent.png
+     :alt: Image of the Add a New Component panel with the Advanced component option
+
+When you click the Advanced component, you can see **Annotation** and **Word cloud** in the list. More information about how to create each problem is provided in the page for that problem type.
+
+
+
+
+
+
+
+
+
+
+
+
 -  :ref:`Open Response Assessment Problems` are a new kind of problem that allow you, the
    students in your course, or a computer algorithm to grade responses in the form
    of essays, files such as computer code, and ../Images/.
@@ -681,3 +766,81 @@ Additionally, several different problem types use the following tags.
      - Creates an answer space where students enter a response. Must contain a **size** attribute; may contain **label**, **math**, **correct_answer**. Used in text input and some custom Python-evaluated input problems.
    * - ``<customresponse> </customresponse>``
      - 
+
+
+
+
+.. _Tools:
+
+#############################
+Working with Tools
+#############################
+
+***************************
+Overview of Tools in Studio
+***************************
+
+In addition to text, images, and different types of problems, Studio allows you
+to add customized learning tools such as word clouds to your course.
+
+- :ref:`Full Screen Image`: The Full Screen Image tool allows a student to enlarge an image in the whole browser window. This is useful when the image contains a large amount of detail and text that is easier to view in context when enlarged.
+- :ref:`LTI Component`: LTI components allow you to add an external learning application or textbook to Studio.
+- :ref:`Word Cloud`: Word clouds arrange text that students enter - for example, in response to a question - into a colorful graphic that students can see.
+- :ref:`Zooming image`: Zooming images allow you to enlarge sections of an image so that students can see the section in detail.
+
+
+.. _Additional Tools:
+
+
+#############################
+Additional Tools
+#############################
+
+*************************
+Additional Tools Overview
+*************************
+
+Individual course teams frequently create tools and problem types that don't have templates in Studio. We want to make these tools available to all our course teams. 
+
+Below, we provide you with all the files and code that you need to create the following tools and problem types.
+
+* :ref:`Chemical Equation`
+* :ref:`Conditional Module`
+* :ref:`Gene Explorer`
+* :ref:`Interactive Periodic Table`
+* :ref:`Molecule Editor`
+* :ref:`Multiple Choice and Numerical Input`
+* :ref:`Polls`
+* :ref:`Protein Builder`
+
+
+
+################################
+Problem and Tool XML
+################################
+
+
+
+.. _General:
+
+=======
+General
+=======
+ 
+Most problems have the following tags.
+
+.. list-table::
+   :widths: 20 80
+
+   * - ``<problem> </problem>``
+     - These must be the first and last tags for any content created in the Advanced Editor in a Problem component.
+   * - ``<startouttext/>``
+     - The ``<startouttext />`` tag indicates the beginning of a line or block of text.
+   * - ``<endouttext/>``
+     - The ``<endouttext />`` tag indicates the end of a line or block of text.
+   * - ``<solution> <div class="detailed-solution"> </div> </solution>`` (optional)
+     - If you want to include more information in the problem, such as a detailed explanation of the problem's answer, you'll enter the text between the two ``<div>`` tags, which are inside the ``<solution>`` tags. (These tags do not have to be on the same line.)
+
+Additionally, all problems must include a **label** attribute. This attribute adds a descriptive label that helps visually impaired students navigate through the problem.
+
+You'll add a **label** attribute to one of the XML tags for the problem. Each example problem below includes a label.
