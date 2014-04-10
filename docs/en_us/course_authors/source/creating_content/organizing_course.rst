@@ -324,24 +324,22 @@ In the unit page, a parent component appears with the display name and a **VIEW*
  :alt: Image of a unit page with a parent component
 
 When you click **VIEW**, the parent component page opens, showing all child
-components.  Breadcrumbs at the top of the page show the unit and parent
-component:
-
-.. image:: ../Images/child-components.png
- :alt: Image of a child component page
-
-Click the arrow next to a child component name to expand that component to see
-its contents. In this example, Child Component A contains an HTML component and
+components. In this example, Child Component A contains an HTML component and
 a video:
 
 .. image:: ../Images/child-components-a.png
  :alt: Image of an expanded child component
 
+Click the arrow next to a child component name to collapse it and hide the component's contents: 
+
+.. image:: ../Images/child-components.png
+ :alt: Image of a child component page
+
+Click the arrow again to expand the component.
+
 .. note:: In this release, you cannot create parent and child components in
  Studio. You set up components and their relationships to each other in XML.
- You can then import the course into Studio. You can edit, duplicate, and
- delete child components, and verify that your course components are organized
- as you intended.
+ You can then import the course into Studio. 
 
 If the unit containing the child components is private or in draft, you can work
 with child components just as you can with any component.
