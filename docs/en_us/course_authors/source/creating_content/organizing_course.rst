@@ -339,10 +339,7 @@ Click the arrow again to expand the component.
 
 .. note:: In this release, you cannot create parent and child components in
  Studio. You set up components and their relationships to each other in XML.
- You can then import the course into Studio. 
-
-If the unit containing the child components is private or in draft, you can work
-with child components just as you can with any component.
+ After you import the course into Studio, you can work with child components just as you can with any other component, if the containing unit is Private or in draft. 
 
 See:
 

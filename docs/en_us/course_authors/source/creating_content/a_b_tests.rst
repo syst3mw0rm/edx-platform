@@ -18,18 +18,18 @@ This chapter describes how you can use A/B tests in your course. See:
 Overview of A/B Tests
 ***********************************
 
-With A/B test functionality, you can create experiments that show different course content to different groups of students. 
+With A/B test functionality, you can:
 
-You can run multiple experiments in your course, and each experiment
-can contain any number of groups.
+* Create experiments that show different course content to different groups of students. 
+
+* Research and compare the performance of students in groups to gain more insight into the relative effectiveness of your course content.
+
+* Specify the components that are in each group.
+
+* Run multiple experiments in your course, each with any number of groups.
 
 Students are randomly assigned to content groups. You cannot control which
 students are assigned to which group.
-
-You determine which components are for which groups.
-
-You can research and compare the performance of students in groups to gain more
-insight into the relative effectiveness of your course content.
 
 .. note:: In the current release, you must configure A/B tests through XML, then import the XML course into edX Studio. You can view and edit A/B tests in Studio, but you cannot create the content of A/B tests directly. See :ref:`Import a Course` for instructions.
 
@@ -119,7 +119,7 @@ The following is an example JSON object that defines an experiment, or A/B test,
 
 In this example:
 
-* The ``"id": 0`` identifies the experiment. The value is referenced in ``user_partition`` attribute of the ``<split_test>`` element in the for A/B test file.  You can configure multiple experiments in your course, with each experiment having its own, independent groups.
+* The ``"id": 0`` identifies the experiment. The value is referenced in the ``user_partition`` attribute of the ``<split_test>`` element in the A/B test file.  You can configure multiple experiments in your course, with each experiment having its own, independent groups.
 
 * The ``groups`` definition identifies the groups to which students are randomly assigned. Each group ``id`` value is referenced in the ``group_id_to_child`` attribute of the ``<split_test>`` element.
 
@@ -153,10 +153,10 @@ The following is an example JSON object that defines two experiments, the first 
                                      "version": 1}]}]
 
 ++++++++++++++++++++++++++++++++++++++++++
-Modifying the A/B Test Policy
+Modify the A/B Test Policy
 ++++++++++++++++++++++++++++++++++++++++++
 
-After a course has started, you may find that students in a specific group are having a problem or poor experience. In this situation, you can remove the group from the experiment in the policy file.
+After a course has started, you may find that students in a specific group are having a problem or a poor experience. In this situation, you can remove the group from the experiment in the policy file. Content that was specified for that group is then no longer part of the course.
 
 Students in the removed group are reassigned to another group. Those students will lose any progress they made on graded problems that were part of the experiment for that group.
 
