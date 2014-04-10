@@ -117,7 +117,7 @@ require(["domReady", "jquery", "js/models/asset", "js/collections/asset",
     };
 
     domReady(function() {
-        $('.uploads .upload-button').bind('click', showUploadModal);
+        $('.uploads .upload-button').live('click', showUploadModal);
         $('.upload-modal .close-button').bind('click', hideModal);
         $('.upload-modal .choose-file-button').bind('click', showFileSelectionMenu);
     });
