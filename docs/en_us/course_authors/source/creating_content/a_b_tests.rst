@@ -99,7 +99,7 @@ You set the test policy in the ``policy.json`` file in the ``policies`` director
 See :ref:`Define the A/B Test Content in the Split Test File` for more information on how the XML for the A/B test uses these settings.
 
 ++++++++++++++++++++++++++++++++++++
-Example of a Simply A/B Test Policy
+Example of a Simple A/B Test Policy
 ++++++++++++++++++++++++++++++++++++
 
 The following is an example JSON object that defines an experiment, or A/B test, with two groups.
