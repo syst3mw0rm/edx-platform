@@ -860,6 +860,8 @@ class MultipleChoiceResponse(LoncapaResponse):
         """
         For a choicegroup with shuffle="true", shuffles the choices in-place in the given tree
         based on the seed. Otherwise does nothing.
+        Raises LoncapaProblemError if both shuffle and answer-pool are active:
+        a problem should use one or the other but not both.
         Does nothing if the tree has already been processed.
         """
         # The tree is already pared down to this <multichoiceresponse> so this query just
@@ -884,8 +886,8 @@ class MultipleChoiceResponse(LoncapaResponse):
 
     def shuffle_choices(self, choices, rng):
         """
-        Returns a list of choice nodes with the shuffling done.
-        Uses the context seed for the randomness of the shuffle.
+        Returns a list of choice nodes with the shuffling done,
+        using the provided random number generator.
         Choices with 'fixed'='true' are held back from the shuffle.
         """
         # Separate out a list of the stuff to be shuffled
@@ -1027,10 +1029,6 @@ class MultipleChoiceResponse(LoncapaResponse):
         rng.shuffle(subset_choices)
 
         return (solution_id, subset_choices)
-
-
-
-
 
 
 @registry.register
