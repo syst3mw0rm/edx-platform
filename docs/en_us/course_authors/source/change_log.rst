@@ -10,8 +10,8 @@ Change Log
 
    * - Date
      - Change  
-   * - 4/10/14
-     - Expanded the :ref:`Grades` chapter to include topics on data interpretation.
+   * - 4/11/14
+     - Expanded the :ref:`Grades` chapter to include topics on interpreting the grade reports and student progress page.
    * - 04/03/14
      - Updated the :ref:`Adding Pages to a Course` chapter to reflect ability to
        :ref:`Show or Hide the Course Wiki Page`.

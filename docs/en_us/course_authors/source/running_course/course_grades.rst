@@ -16,7 +16,7 @@ To review student answers to the problems in your course, you can download data 
 
 For information about how you establish a grading policy and work with the Problem components in your course, see :ref:`Establish a Grading Policy` or :ref:`Working with Problem Components`.
 
-**Important**: If you make changes to your grading policy after a course starts, students can see the effect of your changes on their **Progress** pages. Be sure to announce any changes on your Course Info page.
+.. important:: If you make changes to your grading policy after a course starts, students can see the effect of your changes on their **Progress** pages. Be sure to announce any changes on your Course Info page.
 
 .. _Review_grades:
 
@@ -80,7 +80,7 @@ Download Grades for Enrolled Students
 
 After you request a grade report for your students, the result is a time-stamped CSV file that includes columns to identify each student: id, email, and username. It also includes a column for every assignment that is included in your grading configuration: each homework, lab, midterm, final, and any other assignment type you added to your course. 
 
-.. important:: Because this file contains identifying information for students, be sure to follow your institution's data stewardship policies when you open or save this file.
+.. important:: Because this file contains data that identifies students, be sure to follow your institution's data stewardship policies when you open or save this file.
 
 To download a file of student grades:
 
