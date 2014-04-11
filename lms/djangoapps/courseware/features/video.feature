@@ -185,7 +185,7 @@ Feature: LMS.Video component
     And I select the "1.50" speed
     And I reload the page with video
     Then I see "Hi, welcome to Edx." text in the captions
-    And I see duration "1:00"
+    And I see duration "1:56"
 
   # 15
    Scenario: Download button works correctly for non-english transcript in Youtube mode of Video component
